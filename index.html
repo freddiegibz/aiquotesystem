@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Quoting &amp; Follow-Up System — Turn More Quotes Into Jobs</title>
+  <meta name="description" content="The exact AI-powered quoting and follow-up system implemented in 100+ trade businesses. A simple, non-technical step-by-step guide. £24 one-time payment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #0f1623;
+      --bg-secondary: #161d2e;
+      --bg-card: #1a2236;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b8c9;
+      --accent: #f5c518;
+      --accent-hover: #ffd740;
+      --accent-text: #0f1623;
+      --max-width: 1120px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      background: var(--accent);
+      color: var(--accent-text);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-hover); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 60px;
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-content { max-width: 560px; }
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero h1 .accent { color: var(--accent); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .hero-sub strong { color: var(--text-primary); font-weight: 600; }
+    .cta-btn {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 16px 36px;
+      background: var(--accent);
+      color: var(--accent-text);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    .cta-reassurance {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .product-mockup {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(145deg, var(--bg-card) 0%, #1e2a45 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(245, 197, 24, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
+      transform: perspective(800px) rotateY(-4deg) rotateX(2deg);
+    }
+    .product-mockup::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, rgba(245,197,24,0.2), transparent 50%);
+      z-index: -1;
+    }
+    .mockup-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--accent);
+      border-radius: 12px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mockup-icon svg { width: 28px; height: 28px; }
+    .mockup-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .mockup-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .mockup-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+    .mockup-lines {
+      margin-top: 32px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mockup-line {
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.06);
+    }
+    .mockup-line:nth-child(1) { width: 100%; }
+    .mockup-line:nth-child(2) { width: 85%; }
+    .mockup-line:nth-child(3) { width: 70%; }
+    .mockup-line:nth-child(4) { width: 90%; }
+    .mockup-line:nth-child(5) { width: 60%; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 0; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-heading {
+      font-size: clamp(1.5rem, 3vw, 2.15rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+      max-width: 640px;
+    }
+    .section-heading .accent { color: var(--accent); }
+
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin: 0;
+    }
+
+    /* ── PROBLEM ── */
+    .problem { background: var(--bg-secondary); }
+    .problem-list {
+      list-style: none;
+      margin: 28px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .problem-list li {
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .problem-list li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: #e05252;
+      font-weight: 700;
+      font-size: 0.85rem;
+      top: 2px;
+    }
+    .problem-callout {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 8px;
+    }
+
+    /* ── SOLUTION ── */
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .solution-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .solution-card-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(245,197,24,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    .solution-card h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .solution-card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ── INSIDE ── */
+    .inside { background: var(--bg-secondary); }
+    .inside-list {
+      list-style: none;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .inside-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 10px;
+    }
+    .inside-check {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: rgba(245,197,24,0.12);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .inside-check svg { width: 14px; height: 14px; }
+    .inside-text strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .inside-text span {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .inside-note {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── PROOF ── */
+    .proof-stats {
+      display: flex;
+      gap: 40px;
+      margin: 36px 0;
+      flex-wrap: wrap;
+    }
+    .proof-stat-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .proof-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+    }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+    .testimonial {
+      background: var(--bg-card);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .testimonial-stars {
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .testimonial p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── FIT ── */
+    .fit { background: var(--bg-secondary); }
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 36px;
+    }
+    .fit-col h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .fit-col.yes h3 { color: var(--accent); }
+    .fit-col.no h3 { color: #e05252; }
+    .fit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .fit-list li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      padding-left: 28px;
+      position: relative;
+      line-height: 1.55;
+    }
+    .fit-col.yes .fit-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .fit-col.no .fit-list li::before {
+      content: '✕';
+      position: absolute;
+      left: 0;
+      color: #e05252;
+      font-weight: 700;
+    }
+
+    /* ── CLOSE ── */
+    .close-section {
+      text-align: center;
+      padding: 100px 0;
+    }
+    .close-section .section-heading {
+      max-width: 680px;
+      margin: 0 auto 16px;
+    }
+    .close-section .section-body {
+      max-width: 480px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+    .close-features {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .close-feature {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .close-feature svg { color: var(--accent); flex-shrink: 0; }
+    .close-guarantee {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 32px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .footer p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero-image { order: -1; }
+      .product-mockup {
+        max-width: 300px;
+        transform: none;
+      }
+      .solution-grid { grid-template-columns: 1fr; }
+      .testimonials { grid-template-columns: 1fr; }
+      .fit-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 56px 0; }
+      .hero { padding: 48px 0 40px; }
+      .proof-stats { gap: 24px; }
+      .close-features { flex-direction: column; align-items: center; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <span class="nav-brand">The Quoting &amp; Follow-Up System</span>
+    <a href="#get-access" class="nav-cta">Get Instant Access</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Turn More Quotes Into Jobs&nbsp;— And Remove <span class="accent">3–5 Hours</span> of Admin Per&nbsp;Week.</h1>
+      <p class="hero-sub">The exact AI-powered quoting &amp; follow-up system I've implemented in <strong>100+ trade businesses</strong> — now turned into a simple, non-technical step-by-step guide.</p>
+      <a href="#get-access" class="cta-btn">Get Instant Access – £24</a>
+      <p class="cta-reassurance">One-time payment. No tech experience needed.</p>
+    </div>
+    <div class="hero-image">
+      <div class="product-mockup">
+        <div class="mockup-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0f1623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <span class="mockup-label">Digital Guide</span>
+        <span class="mockup-title">The Quoting &amp;<br>Follow-Up System</span>
+        <span class="mockup-subtitle">For Trade Business Owners</span>
+        <div class="mockup-lines">
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+          <div class="mockup-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<hr class="divider">
+
+<!-- SECTION 1 – THE REAL PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <span class="section-label">The Real Problem</span>
+    <h2 class="section-heading">You're Not Losing Jobs on Price. You're Losing Them in the <span class="accent">Follow-Up</span>.</h2>
+    <p class="section-body">Most trade businesses don't need more leads. They need to convert the ones they already have. Slow responses, forgotten follow-ups, and evenings lost to admin are quietly costing you thousands every year.</p>
+    <ul class="problem-list">
+      <li>Quotes sent but never chased</li>
+      <li>Leads going cold because you're on-site all day</li>
+      <li>Admin spilling into evenings and weekends</li>
+      <li>Rewriting the same messages over and over again</li>
+      <li>No system — just memory and good intentions</li>
+    </ul>
+    <p class="problem-callout">This isn't a lead problem. It's a system problem.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SECTION 2 – THE SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <span class="section-label">The Solution</span>
+    <h2 class="section-heading">A Simple System That Handles Your Quoting &amp; Follow-Up — <span class="accent">Without</span> the Tech Headache.</h2>
+    <p class="section-body">This isn't complex automation or another piece of software to learn. It's a straightforward workflow that uses AI as a drafting assistant — helping you write quotes faster, follow up consistently, and cut hours of repetitive admin every week. No technical skills required.</p>
+    <div class="solution-grid">
+      <div class="solution-card">
+        <div class="solution-card-icon">⚡</div>
+        <h3>Faster Quote Drafting</h3>
+        <p>Stop rewriting the same quotes from scratch. Use simple AI prompts to draft professional quotes in minutes.</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-card-icon">📋</div>
+        <h3>Structured Follow-Up Timeline</h3>
+        <p>Know exactly when and what to send after every quote. No more guessing or forgetting.</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-card-icon">💬</div>
+        <h3>Consistent Messaging</h3>
+        <p>Every quote and follow-up sounds professional and on-brand — without you writing each one from scratch.</p>
+      </div>
+      <div class="solution-card">
+        <div class="solution-card-icon">⏱️</div>
+        <h3>Reduced Admin Time</h3>
+        <p>Reclaim 3–5 hours every week. Spend that time on-site earning, not behind a screen doing paperwork.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SECTION 3 – WHAT'S INSIDE -->
+<section class="inside">
+  <div class="container">
+    <span class="section-label">What's Inside</span>
+    <h2 class="section-heading">Here's Exactly What You'll Install.</h2>
+    <ul class="inside-list">
+      <li>
+        <div class="inside-check"><svg viewBox="0 0 24 24" fill="none" stroke="#f5c518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="inside-text">
+          <strong>Time-Leak Mapping Worksheet</strong>
+          <span>Identify exactly where your hours are going — and which tasks to eliminate first.</span>
+        </div>
+      </li>
+      <li>
+        <div class="inside-check"><svg viewBox="0 0 24 24" fill="none" stroke="#f5c518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="inside-text">
+          <strong>AI Quote Drafting Framework</strong>
+          <span>A repeatable method for producing professional quotes fast — using AI as your drafting assistant.</span>
+        </div>
+      </li>
+      <li>
+        <div class="inside-check"><svg viewBox="0 0 24 24" fill="none" stroke="#f5c518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="inside-text">
+          <strong>Follow-Up System Template</strong>
+          <span>A clear timeline and message sequence so no quote ever falls through the cracks again.</span>
+        </div>
+      </li>
+      <li>
+        <div class="inside-check"><svg viewBox="0 0 24 24" fill="none" stroke="#f5c518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="inside-text">
+          <strong>Ready-to-Use Prompt Structures</strong>
+          <span>Copy-paste prompts you can start using today. No prompt engineering knowledge needed.</span>
+        </div>
+      </li>
+      <li>
+        <div class="inside-check"><svg viewBox="0 0 24 24" fill="none" stroke="#f5c518" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="inside-text">
+          <strong>Weekly 15-Minute Admin Reset</strong>
+          <span>A simple weekly routine that keeps your pipeline clean and your follow-ups on track.</span>
+        </div>
+      </li>
+    </ul>
+    <p class="inside-note">Everything is designed to copy and use immediately.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SECTION 4 – PROOF & AUTHORITY -->
+<section class="proof">
+  <div class="container">
+    <span class="section-label">Why This Works</span>
+    <h2 class="section-heading">Built From Real Installs Across <span class="accent">100+</span> Trade Businesses.</h2>
+    <p class="section-body">This isn't theory or a generic template. Every framework, prompt, and workflow in this guide has been extracted from hands-on implementations with real trade businesses — plumbers, electricians, builders, roofers, and contractors.</p>
+    <div class="proof-stats">
+      <div>
+        <div class="proof-stat-number">100+</div>
+        <div class="proof-stat-label">Trade businesses served</div>
+      </div>
+      <div>
+        <div class="proof-stat-number">3–5 hrs</div>
+        <div class="proof-stat-label">Admin saved per week</div>
+      </div>
+      <div>
+        <div class="proof-stat-number">15 min</div>
+        <div class="proof-stat-label">Weekly maintenance</div>
+      </div>
+    </div>
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"I was spending every evening writing quotes and chasing people up. This system cut that in half within the first week."</p>
+        <div class="testimonial-author">Mark T.</div>
+        <div class="testimonial-role">Plumbing &amp; Heating Contractor</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Dead simple to follow. I'm not technical at all and had the whole thing running in a couple of hours."</p>
+        <div class="testimonial-author">Chris D.</div>
+        <div class="testimonial-role">Electrician, Solo Operator</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"We've won at least 4 extra jobs this month just from following up properly. Easily paid for itself."</p>
+        <div class="testimonial-author">Sarah &amp; James K.</div>
+        <div class="testimonial-role">Building &amp; Renovation Company</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SECTION 5 – WHO THIS IS FOR -->
+<section class="fit">
+  <div class="container">
+    <span class="section-label">Is This For You?</span>
+    <h2 class="section-heading">Honest Answer: It Depends.</h2>
+    <div class="fit-grid">
+      <div class="fit-col yes">
+        <h3>This is for you if:</h3>
+        <ul class="fit-list">
+          <li>You send quotes regularly — weekly or more</li>
+          <li>You handle your own quoting and follow-up</li>
+          <li>You're losing time to repetitive admin</li>
+          <li>You want to win more jobs without buying more leads</li>
+          <li>You're open to using simple AI tools (like ChatGPT)</li>
+        </ul>
+      </div>
+      <div class="fit-col no">
+        <h3>This is NOT for you if:</h3>
+        <ul class="fit-list">
+          <li>You don't send quotes on a weekly basis</li>
+          <li>You're looking for complex automation setups</li>
+          <li>You want a done-for-you service, not a guide</li>
+          <li>You're not willing to spend 2 hours on setup</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SECTION 6 – CLOSE -->
+<section class="close-section" id="get-access">
+  <div class="container">
+    <span class="section-label">Get Started</span>
+    <h2 class="section-heading">Win More Jobs. Remove <span class="accent">3–5 Hours</span> of Admin Per&nbsp;Week.</h2>
+    <p class="section-body">A non-technical, step-by-step system you can install today and start seeing results this week.</p>
+    <div class="close-features">
+      <span class="close-feature">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Instant digital access
+      </span>
+      <span class="close-feature">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Non-technical. Step-by-step.
+      </span>
+      <span class="close-feature">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        One-time payment
+      </span>
+    </div>
+    <a href="#" class="cta-btn">Get The System – £24</a>
+    <p class="close-guarantee">7-day satisfaction guarantee. If it doesn't work for you, you get your money back.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 The Quoting &amp; Follow-Up System. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
