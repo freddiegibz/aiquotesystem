@@ -123,79 +123,14 @@
       justify-content: center;
       align-items: center;
     }
-    .product-mockup {
+    .hero-product-img {
       width: 100%;
       max-width: 420px;
-      aspect-ratio: 3 / 4;
-      background: linear-gradient(145deg, var(--bg-card) 0%, #1e2a45 100%);
-      border-radius: 16px;
-      border: 1px solid rgba(245, 197, 24, 0.15);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-      position: relative;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.04);
-      transform: perspective(800px) rotateY(-4deg) rotateX(2deg);
-    }
-    .product-mockup::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: 17px;
-      background: linear-gradient(135deg, rgba(245,197,24,0.2), transparent 50%);
-      z-index: -1;
-    }
-    .mockup-icon {
-      width: 56px;
-      height: 56px;
-      background: var(--accent);
+      height: auto;
       border-radius: 12px;
-      margin-bottom: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+      object-fit: contain;
     }
-    .mockup-icon svg { width: 28px; height: 28px; }
-    .mockup-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .mockup-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      text-align: center;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-    .mockup-subtitle {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      text-align: center;
-    }
-    .mockup-lines {
-      margin-top: 32px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .mockup-line {
-      height: 6px;
-      border-radius: 3px;
-      background: rgba(255,255,255,0.06);
-    }
-    .mockup-line:nth-child(1) { width: 100%; }
-    .mockup-line:nth-child(2) { width: 85%; }
-    .mockup-line:nth-child(3) { width: 70%; }
-    .mockup-line:nth-child(4) { width: 90%; }
-    .mockup-line:nth-child(5) { width: 60%; }
 
     /* ── SECTIONS ── */
     section { padding: 80px 0; }
@@ -499,9 +434,8 @@
         grid-template-columns: 1fr;
         gap: 48px;
       }
-      .product-mockup {
+      .hero-product-img {
         max-width: 300px;
-        transform: none;
       }
       .solution-grid { grid-template-columns: 1fr; }
       .testimonials { grid-template-columns: 1fr; }
@@ -538,21 +472,7 @@
       <p class="cta-reassurance">One-time payment. No tech experience needed.</p>
     </div>
     <div class="hero-image">
-      <div class="product-mockup">
-        <div class="mockup-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0f1623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <span class="mockup-label">Digital Guide</span>
-        <span class="mockup-title">The Quoting &amp;<br>Follow-Up System</span>
-        <span class="mockup-subtitle">For Trade Business Owners</span>
-        <div class="mockup-lines">
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-          <div class="mockup-line"></div>
-        </div>
-      </div>
+      <img src="photo_2026-03-04_12-34-49.jpg" alt="The Quoting &amp; Follow-Up System digital guide" class="hero-product-img">
     </div>
   </div>
 </header>
