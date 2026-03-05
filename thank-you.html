@@ -120,35 +120,9 @@
 
     .accent { color: var(--accent); font-weight: 800; }
 
-    .divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      margin: 18px 0 2px;
-    }
-
-    .widget-wrap {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: var(--bg-card);
-      margin-top: 14px;
-    }
-
-    .calendly-inline-widget {
-      min-width: 320px;
-      height: 720px;
-    }
-
-    .fine {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-      margin-top: 10px;
-    }
-
     @media (max-width: 520px) {
-      .wrap { padding: 44px 0 64px; }
+      .wrap { padding: 40px 0 56px; }
       .cta-btn { font-size: 0.95rem; padding: 13px 18px; }
-      .calendly-inline-widget { height: 760px; }
     }
   </style>
 </head>
@@ -158,34 +132,44 @@
       <div>
         <span class="brand">The Quoting &amp; Follow-Up System</span>
         <h1>Your Guide Is Ready.</h1>
-        <p class="lead">Thanks for your purchase — you're in. Use the button below to download <strong>The Quoting &amp; Follow-Up System: AI Strategies for Trade Businesses</strong>.</p>
+        <p class="lead">Thanks for your purchase — you're in. Download your guide below.</p>
 
         <div class="card">
           <div class="section-title">Download your guide</div>
-          <p class="section-body">Click once and it’ll start downloading. If you’re on mobile, it may open in a new tab first.</p>
+          <p class="section-body">Click below to download your copy.</p>
           <div class="cta-row">
             <a class="cta-btn" href="The-Quoting-and-Follow-Up-System.pdf" download>Download the guide</a>
-            <a class="sub-link" href="The-Quoting-and-Follow-Up-System.pdf" target="_blank" rel="noreferrer">Open in a new tab</a>
           </div>
-          <p class="fine">If you don’t see it, check your downloads folder.</p>
         </div>
       </div>
 
       <section class="card">
-        <div class="section-title">Here’s what you now have access to, and what you can do next.</div>
+        <div class="section-title">Optional Next Step</div>
         <div class="section-body">
-          <p style="margin-bottom: 10px;">You’ve just unlocked the quoting and follow-up system used in <span class="accent">100+</span> trade businesses to win more jobs and cut admin — laid out in a simple, non-technical guide you can copy straight into your business.</p>
-          <p style="margin-bottom: 10px;"><strong>Free gift for guide buyers:</strong> we also include a <strong>Free AI Workflow Evaluation for Guide Buyers</strong>. It’s a quick review of your quoting, follow-up, and admin to spot where simple AI systems could save time, win more jobs, and reduce admin.</p>
-          <p>Use the calendar below to book your session if you’d find that useful.</p>
+          <p style="font-weight: 600; margin-bottom: 6px;">Free AI Systems Evaluation for Trade Businesses</p>
+          <p>Many guide buyers ask us to help implement similar AI systems across the rest of their business. If you’d like us to identify where automation could save time and win more jobs, you can request a free evaluation below.</p>
         </div>
-        <div class="widget-wrap">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-link/ai-workflow-evaluation?hide_gdpr_banner=1"></div>
+        <div class="cta-row" style="margin-top: 14px;">
+          <a href="#" class="cta-btn" id="book-eval-btn">Book Your Free AI Systems Evaluation</a>
         </div>
-        <p class="fine">If the calendar doesn’t load, disable ad blockers or try another browser.</p>
       </section>
     </div>
   </main>
 
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var btn = document.getElementById('book-eval-btn');
+      if (!btn) return;
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (window.Calendly && typeof Calendly.initPopupWidget === 'function') {
+          Calendly.initPopupWidget({
+            url: 'https://calendly.com/your-calendly-link/ai-workflow-evaluation?hide_gdpr_banner=1'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
