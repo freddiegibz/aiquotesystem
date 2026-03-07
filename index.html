@@ -65,12 +65,19 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
     }
     .nav-brand {
       font-weight: 700;
       font-size: 1rem;
       color: var(--text-primary);
       letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .nav-cta {
       font-size: 0.875rem;
@@ -464,8 +471,8 @@
       .hero { padding: 48px 0 40px; }
       .proof-stats { gap: 24px; }
       .close-features { flex-direction: column; align-items: center; gap: 16px; }
-      .nav-brand { font-size: 0.75rem; }
-      .nav-cta { font-size: 0.7rem; padding: 6px 12px; }
+      .nav-brand { font-size: 0.7rem; }
+      .nav-cta { font-size: 0.7rem; padding: 6px 10px; }
     }
   </style>
 </head>
@@ -474,8 +481,11 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="container">
-    <span class="nav-brand">The Quoting &amp; Follow-Up System</span>
-    <a href="https://buy.stripe.com/8x200idrdcsIfP20TwbZe0o" class="nav-cta">Get Instant Access</a>
+    <span class="nav-brand">Quoting System</span>
+    <div class="nav-actions">
+      <a href="mailto:alfiehinks14@gmail.com" class="nav-cta">Contact</a>
+      <a href="https://buy.stripe.com/8x200idrdcsIfP20TwbZe0o" class="nav-cta">Get Instant Access</a>
+    </div>
   </div>
 </nav>
 
